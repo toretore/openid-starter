@@ -9,6 +9,6 @@ plugin from the Rails repo, and a tiny HAML plugin used to initialise
 the gem. These are already in vendor/plugins.
 
 Once you have those, all you need to do is copy config/database.yml.example
-to config/database.yml and see if the settings are ok, and the app should
-be ready for use. The only thing you can do with it is log in and out
-using OpenID, but that's why I call it a starter kit :)
+to config/database.yml and see if the settings are ok, run "rake db:migrate",
+and the app should be ready for use. The only thing you can do with it is
+log in and out using OpenID, but that's why I call it a starter kit :)

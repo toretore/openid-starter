@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>OpenID starter app</title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <%= tag 'link', :rel => 'home', :href => root_url %>
+    <link rel="contents" href="#content" />
+    <%= javascript_include_tag 'prototype' %>
+    <%= javascript_include_tag 'application' %>
+    <%= stylesheet_link_tag 'application' %>
+    <%= yield :head %>
+  </head>
+  <body>
+
+    <div id="container">
+
+      <h1 id="header"><%= link_to 'OpenID starter app', root_url %></h1>
+
+      <div id="content-wrapper">
+        <div id="content">
+
+          <div id="messages">
+            <% unless flash[:error].blank? -%>
+              <p class="error"><%= flash[:error] %></p>
+            <% end -%>
+            <% unless flash[:notice].blank? -%>
+              <p class="notice"><%= flash[:notice] %></p>
+            <% end -%>
+          </div>
+
+          <% if yield(:title) -%>
+            <h2><%= yield :title %></h2>
+          <% end -%>
+
+          <%= yield %>
+
+        </div>
+      </div>
+
+      <div id="sidebar-wrapper">
+        <div id="sidebar">
+          
+          <%= yield :sidebar %>
+
+          <%= render :partial => 'logins/sidebar' %>
+
+        </div>
+      </div>
+
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,12 @@
+<% form_tag login_url do -%>
+
+  <p>
+    <label for="openid_url">OpenID URL</label>
+    <%= text_field_tag :openid_url, params[:openid_url] %>
+  </p>
+
+  <p class="button">
+    <%= submit_tag 'Log in' %>
+  </p>
+
+<% end -%>

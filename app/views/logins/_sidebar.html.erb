@@ -1,0 +1,10 @@
+<% if logged_in? -%>
+  <h2>Logged in</h2>
+  <p>
+    <%= h(current_user.name) %>
+  </p>
+  <%= button_to 'Log out', login_url, :method => :delete %>
+<% else -%>
+  <h2>Log in</h2>
+  <%= render :partial => 'form' %>
+<% end -%>

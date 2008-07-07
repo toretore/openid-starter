@@ -1,0 +1,7 @@
+<% title 'Logged in' -%>
+
+<p>
+  You're logged in as <strong><%= current_user.name %></strong>.
+</p>
+
+<%= button_to 'Log out', login_url, :method => :delete %>

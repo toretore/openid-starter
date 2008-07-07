@@ -28,6 +28,8 @@ class ApplicationController < ActionController::Base
 
 private
 
+  #"Logging in":  self.current_user = a_user
+  #"Logging out": self.current_user = nil
   def current_user=(user)
     session[:current_user_id] = user && user.id
     @_current_user = user

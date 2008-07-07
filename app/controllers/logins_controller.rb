@@ -49,8 +49,10 @@ private
 
   def authenticate_openid_user(identity_url, registration)
     user = User.find_or_initialize_by_openid_url(identity_url)
+
+    #Add or update attributes provided by the OpenID server
     model_to_registration_mapping.each do |attr,reg_key|
-      user.send("#{attr}=", registration[reg_key]) unless registration[reg_key].blank?
+      user.send("#{attr}=", registration[reg_key])
     end
 
     if user.save

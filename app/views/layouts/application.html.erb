@@ -12,41 +12,43 @@
   </head>
   <body>
 
-    <div id="container">
+    <div id="container-wrapper">
+      <div id="container">
 
-      <h1 id="header"><%= link_to 'OpenID starter app', root_url %></h1>
+        <h1 id="header"><%= link_to 'OpenID starter app', root_url %></h1>
 
-      <div id="content-wrapper">
-        <div id="content">
+        <div id="content-wrapper">
+          <div id="content">
 
-          <div id="messages">
-            <% unless flash[:error].blank? -%>
-              <p class="error"><%= flash[:error] %></p>
+            <div id="messages">
+              <% unless flash[:error].blank? -%>
+                <p class="error"><%= flash[:error] %></p>
+              <% end -%>
+              <% unless flash[:notice].blank? -%>
+                <p class="notice"><%= flash[:notice] %></p>
+              <% end -%>
+            </div>
+
+            <% if yield(:title) -%>
+              <h2><%= yield :title %></h2>
             <% end -%>
-            <% unless flash[:notice].blank? -%>
-              <p class="notice"><%= flash[:notice] %></p>
-            <% end -%>
+
+            <%= yield %>
+
           </div>
-
-          <% if yield(:title) -%>
-            <h2><%= yield :title %></h2>
-          <% end -%>
-
-          <%= yield %>
-
         </div>
-      </div>
 
-      <div id="sidebar-wrapper">
-        <div id="sidebar">
-          
-          <%= yield :sidebar %>
+        <div id="sidebar-wrapper">
+          <div id="sidebar">
+            
+            <%= yield :sidebar %>
 
-          <%= render :partial => 'logins/sidebar' %>
+            <%= render :partial => 'logins/sidebar' %>
 
+          </div>
         </div>
-      </div>
 
+      </div>
     </div>
 
   </body>

@@ -56,7 +56,7 @@ private
     end
 
     if user.save
-      self.current_user = user
+      self.current_user = user#This is the actual "logging in"
       authentication_successful
     else
       authentication_failed 'Login failed: Could not save user from requested data'
@@ -74,10 +74,13 @@ private
    }.merge(openid_registration_options).merge(opts)
   end
 
+  #Which attributes to request from the provider using the Simple Registration Extension
+  #They can be :optional or :required
   def openid_registration_options
     {:optional => [:fullname, :email]}
   end
 
+  #Which attributes on the model receives which SReg attributes?
   def model_to_registration_mapping
     {:name => 'fullname', :email => 'email'}
   end

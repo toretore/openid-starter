@@ -1,7 +1,7 @@
 <% if logged_in? -%>
   <h2>Logged in</h2>
   <p>
-    <%= h(current_user.name) %>
+    <%= h(current_user.display_name) %>
   </p>
   <%= button_to 'Log out', login_url, :method => :delete %>
 <% else -%>

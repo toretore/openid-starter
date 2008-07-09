@@ -36,6 +36,17 @@ body {
     #header a:hover, #header a:focus {
       text-decoration: underline; }
 
+#messages .error, #messages .notice {
+  text-align: center;
+  padding: 0.5em;
+  margin: 0.5em 0; }
+#messages .error {
+  background: #f99;
+  color: #300; }
+#messages .notice {
+  background: #9f9;
+  color: #030; }
+
 #content-wrapper {
   width: 70%;
   float: left; }

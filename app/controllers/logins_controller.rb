@@ -1,5 +1,7 @@
 class LoginsController < ApplicationController
 
+  skip_before_filter :verify_authenticity_token, :only => :create
+
 
   def show
     redirect_to new_login_url unless logged_in?
@@ -70,7 +72,7 @@ private
 
   def openid_authentication_options(opts={})
    {
-    :return_to => complete_login_url
+    :return_to => login_url #open_id_authentication will fake a POST
    }.merge(openid_registration_options).merge(opts)
   end
 

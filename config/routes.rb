@@ -36,7 +36,6 @@ ActionController::Routing::Routes.draw do |map|
   # See how all your routes lay out with "rake routes"
 
   map.resource :login
-  map.complete_login 'login/complete', :controller => 'logins', :action => 'create', :requirements => {:method => :get}
   
   map.root :controller => 'logins', :action => 'show'
 

@@ -67,7 +67,7 @@ private
 
 
   def openid_authentication_url
-    params[:openid_url]
+    params[:openid_identifier]
   end
 
   def openid_authentication_options(opts={})

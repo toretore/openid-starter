@@ -64,6 +64,27 @@ body {
     font-size: 115%; }
   #content p {
     margin: 1em 0; }
+  #content form p {
+    position: relative; }
+    #content form p .openid-providers {
+      display: none;
+      background: #fff;
+      border: 1px solid #eee;
+      overflow: hidden;
+      list-style-type: none; }
+      #content form p .openid-providers li {
+        float: left; }
+        #content form p .openid-providers li a {
+          display: block;
+          padding: 0.2em 0.5em;
+          color: #666;
+          text-decoration: none; }
+          #content form p .openid-providers li a:hover, #content form p .openid-providers li a:focus {
+            background: #f0f0f0; }
+        #content form p .openid-providers li.selected a {
+          color: #f00; }
+      #content form p .openid-providers.active {
+        display: block; }
 
 #sidebar-wrapper {
   width: 25%;

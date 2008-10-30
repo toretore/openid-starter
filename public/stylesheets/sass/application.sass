@@ -76,6 +76,36 @@ body
   p
     margin: 1em 0
 
+  form
+    
+    p
+      position: relative
+
+      .openid-providers
+        display: none
+        background: #fff
+        border: 1px solid #eee
+        overflow: hidden
+        list-style-type: none
+
+        li
+          float: left
+
+          a
+            display: block
+            padding: 0.2em 0.5em
+            color: #666
+            text-decoration: none
+
+            &:hover, &:focus
+              background: #f0f0f0
+
+          &.selected a
+            color: #f00
+
+        &.active
+          display: block
+
 #sidebar-wrapper
   width: 25%
   float: right

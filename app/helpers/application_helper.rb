@@ -7,7 +7,7 @@ module ApplicationHelper
   end
 
 
-  def javacsript(*files)
+  def javascript(*files)
     content_for :head do
       files.map{|f| javascript_include_tag f }.join("\n")
     end
